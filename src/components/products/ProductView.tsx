@@ -18,8 +18,8 @@ export default function ProductView({ product }) {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.inner}>
+    <div className={styles.inner}>
+      <div className={styles.container}>
         <figure>
           <img className={styles.img} src={image} alt={title} />
         </figure>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./SearchInput.module.css";
 import { IProduct, useProducts } from "../../hooks/useProducts";
 import { useNavigate } from "react-router";

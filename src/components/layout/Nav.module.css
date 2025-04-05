@@ -8,11 +8,23 @@
 }
 
 .inner {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 8px;
+  height: 64px;
+}
+
+.sideMenuContainer {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
 }
 
 .leftContainer {
@@ -28,7 +40,7 @@
   margin: 0 1rem;
 }
 
-.sideMenu {
+.sideMenuIcon {
   width: 2rem;
   height: 2rem;
   display: none;
@@ -41,6 +53,7 @@
   text-transform: capitalize;
   color: var(--text-color-1);
   margin: 0 0.8rem;
+  flex-shrink: 0;
 }
 
 .categories {
@@ -78,7 +91,52 @@
   cursor: pointer;
 }
 
-.search-icon {
-  cursor: pointer;
+.searchIcon {
   display: none;
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+.searchIcon path {
+  stroke: var(--text-color-1);
+}
+.searchDesktop {
+  display: block;
+}
+
+.searchMobile {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .sideMenuIcon {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .categories {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .searchIcon {
+    display: block;
+  }
+
+  .searchDesktop {
+    display: none;
+  }
+
+  .searchMobile {
+    position: absolute;
+    display: block;
+    top: 64px;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
 }

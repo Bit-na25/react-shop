@@ -16,3 +16,19 @@
   width: 100%;
   gap: 1.5rem;
 }
+
+@media screen and (max-width: 1024px) {
+  .productList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .scrollList {
+    grid-template-columns: repeat(4, 1fr);
+    overflow-x: auto;
+  }
+  .gridList {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+  max-width: 20rem;
+  height: 100%;
+  padding: 2.5rem;
+  background-color: var(--bg-color-3);
+  font-size: 1.2rem;
+
+  transform: translate3d(-500px, 0, 0);
+  transition: transform 0.5s;
+}
+
+.active {
+  transform: translate3d(0, 0, 0);
+}
+
+.btn {
+  padding: 1rem 0.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-color-1);
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--bg-color-4);
+  color: var(--text-color-1);
+}
+
+.btn:active {
+  background-color: var(--point-color);
+  color: #fff;
+}

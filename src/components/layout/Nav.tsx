@@ -1,23 +1,45 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Nav.module.css";
 import CartIcon from "../common/CartIcon";
 import SearchInput from "../common/SearchInput";
 import clsx from "clsx";
 import { useRecoilState } from "recoil";
 import { themeState } from "../../store/theme";
+import { useState } from "react";
+import SideMenu from "../common/SideMenu";
 
 const Nav = () => {
   const [theme, setTheme] = useRecoilState(themeState);
+  const [isOpenSearch, setIsOpenSearch] = useState(false);
+  const [isOpenSideMenu, setIsOpenSideMenu] = useState(false);
+  const [isVisibleSideMenu, setIsVisibleSideMenu] = useState(false);
+  const navigate = useNavigate();
 
   const handleChangeTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
+  };
+
+  const handleToggleSideMenu = (isOpen: boolean) => {
+    if (isOpen) {
+      setIsVisibleSideMenu(true);
+      setTimeout(() => setIsOpenSideMenu(true), 1);
+    } else {
+      setIsOpenSideMenu(false);
+      setTimeout(() => setIsVisibleSideMenu(false), 300);
+    }
+  };
+
+  const handleCategoryClick = (category: string) => {
+    handleToggleSideMenu(false);
+
+    navigate(`/products?category=${category}`);
   };
 
   return (
     <nav className={styles.container}>
       <div className={clsx(styles.inner, "inner-container")}>
         <div className={styles.leftContainer}>
-          <div className={styles.sideMenu}>
+          <div className={styles.sideMenuIcon} onClick={() => handleToggleSideMenu(true)}>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
@@ -26,15 +48,30 @@ const Nav = () => {
             react shop
           </Link>
           <div className={styles.categories}>
-            <Link className={styles.categoryBtn} to="/products?category=fashion">
+            <div
+              className={styles.categoryBtn}
+              onClick={() => {
+                handleCategoryClick("fashion");
+              }}
+            >
               패션
-            </Link>
-            <Link className={styles.categoryBtn} to="/products?category=accessory">
+            </div>
+            <div
+              className={styles.categoryBtn}
+              onClick={() => {
+                handleCategoryClick("accessory");
+              }}
+            >
               악세서리
-            </Link>
-            <Link className={styles.categoryBtn} to="/products?category=digital">
+            </div>
+            <div
+              className={styles.categoryBtn}
+              onClick={() => {
+                handleCategoryClick("digital");
+              }}
+            >
               디지털
-            </Link>
+            </div>
           </div>
         </div>
         <div className={styles.rightContainer}>
@@ -48,11 +85,34 @@ const Nav = () => {
                 <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
               </svg>
             )}
+          </div>{" "}
+          <div
+            className={styles.searchIcon}
+            onClick={() => {
+              setIsOpenSearch(!isOpenSearch);
+            }}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              ></path>
+            </svg>
           </div>
-          <SearchInput />
+          <div className={styles.searchDesktop}>
+            <SearchInput />
+          </div>
+          <div className={styles.searchMobile}>{isOpenSearch && <SearchInput />}</div>
           <CartIcon />
         </div>
       </div>
+      {isVisibleSideMenu && (
+        <div className={styles.sideMenuContainer} onClick={() => handleToggleSideMenu(false)}>
+          <SideMenu isOpen={isOpenSideMenu} onClick={handleCategoryClick} />
+        </div>
+      )}
     </nav>
   );
 };

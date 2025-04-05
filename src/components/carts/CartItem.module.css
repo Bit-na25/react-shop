@@ -68,3 +68,17 @@
 .count span {
   padding: 1rem;
 }
+
+@media screen and (max-width: 1024px) {
+  .cartItem {
+    flex-direction: column;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .cartItem figure {
+    width: 100%;
+  }
+  .itemInfo {
+    padding: 2rem 0;
+  }
+}

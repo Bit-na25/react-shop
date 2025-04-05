@@ -34,3 +34,15 @@
   max-width: 60%;
   max-height: 60%;
 }
+
+@media screen and (max-width: 768px) {
+  .container {
+    min-width: 320px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    min-width: 220px;
+  }
+}

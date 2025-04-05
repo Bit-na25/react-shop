@@ -21,7 +21,7 @@ const ProductListPage = () => {
   return (
     <div className="inner-container">
       <BreadCrumb category={MENUS.HOME} crumb={category as string} />
-      <ProductList category={category} />
+      <ProductList category={category!} mode="grid" />
     </div>
   );
 };
