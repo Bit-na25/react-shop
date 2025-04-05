@@ -1,0 +1,19 @@
+.btn {
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 3rem;
+  padding: 0 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  background-color: var(--point-color);
+  color: #fff;
+  border: 1px solid var(--point-color);
+}
+
+.outlineBtn {
+  border-color: var(--text-color-2);
+  color: var(--text-color-2);
+  background-color: transparent;
+}

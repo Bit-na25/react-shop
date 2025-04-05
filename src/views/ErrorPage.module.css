@@ -1,0 +1,29 @@
+.title {
+  font-size: 8rem;
+  line-height: 1;
+  margin-top: 7rem;
+  text-align: center;
+  font-weight: 700;
+  color: var(--text-color-2);
+}
+
+.description {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  margin-bottom: 2.5rem;
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--text-color-2);
+}
+
+.link {
+  text-align: center;
+}
+
+.btn {
+  height: 4rem;
+  min-height: 4rem;
+  width: 10rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}

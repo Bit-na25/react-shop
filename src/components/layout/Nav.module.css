@@ -1,0 +1,83 @@
+.container {
+  position: fixed;
+  background-color: var(--bg-color-1);
+  color: var(--text-color-1);
+  width: 100%;
+  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.2);
+  z-index: 99;
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 8px;
+}
+
+.leftContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rightContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 1rem;
+}
+
+.sideMenu {
+  width: 2rem;
+  height: 2rem;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: var(--text-color-1);
+  margin: 0 0.8rem;
+}
+
+.categories {
+  display: flex;
+}
+
+.categoryBtn {
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-color-1);
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.categoryBtn:hover {
+  background-color: var(--bg-color-4);
+  color: var(--text-color-1);
+}
+
+.theme {
+  width: 1.8rem;
+  height: 1.8rem;
+  cursor: pointer;
+
+  transition: transform 0.4s ease;
+  transform: rotate(0deg);
+}
+
+.rotated {
+  transform: rotate(45deg);
+}
+
+.theme input {
+  cursor: pointer;
+}
+
+.search-icon {
+  cursor: pointer;
+  display: none;
+}

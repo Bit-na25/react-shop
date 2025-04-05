@@ -1,0 +1,17 @@
+.breadCrumb {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: var(--text-color-2);
+  padding: 0 1rem;
+}
+
+.breadCrumb > div {
+  margin-right: 0.5rem;
+}
+
+.menu::before {
+  content: ">";
+  margin-right: 0.5rem;
+}

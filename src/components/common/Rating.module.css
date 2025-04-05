@@ -1,0 +1,35 @@
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stars {
+  display: flex;
+  font-size: 1.5rem;
+}
+
+.starFilled {
+  color: #facc15;
+}
+
+.starHalf {
+  position: relative;
+  color: hsl(50, 0%, 37%);
+}
+
+.starHalf::before {
+  content: "★";
+  position: absolute;
+  color: #facc15;
+  width: 50%;
+  overflow: hidden;
+}
+
+.starEmpty {
+  color: hsl(50, 0%, 37%);
+}
+
+.text {
+  margin-left: 0.25rem;
+}

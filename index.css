@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color-1: rgb(255 255 255);
+  --bg-color-2: rgb(209, 213, 219);
+  --bg-color-3: rgb(255 255 255);
+  --bg-color-4: rgb(243, 244, 246);
+  --bg-color-5: hsl(0, 0%, 95%);
+  --bg-color-6: hsl(219, 14%, 22%);
+  --text-color-1: rgb(55, 65, 81);
+  --text-color-2: hsl(215, 28%, 17%);
+  --text-color-3: rgb(255 255 255);
+  --point-color: hsl(262, 80%, 50%);
+}
+
+[data-theme="dark"] {
+  --bg-color-1: hsl(218, 18%, 12%);
+  --bg-color-2: rgb(75, 85, 99);
+  --bg-color-3: hsl(220, 18%, 20%);
+  --bg-color-4: rgb(55, 65, 81);
+  --bg-color-5: hsl(220, 17%, 17%);
+  --bg-color-6: hsl(220, 18%, 20%);
+  --text-color-1: rgb(255 255 255);
+  --text-color-2: hsl(220, 13%, 69%);
+  --text-color-3: hsl(220, 13%, 69%);
+  --point-color: hsl(262, 80%, 50%);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--text-color-1);
+  background-color: var(--bg-color-3);
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.inner-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  padding-top: 64px;
+  margin-bottom: "5rem";
+  flex: 1;
+}

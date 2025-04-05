@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+  background-color: var(--bg-color-5);
+  width: 100%;
+  color: var(--text-color-2);
+  gap: 2.5rem;
+}
+
+.zbLink {
+  color: var(--text-color-2);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.zbLink:hover {
+  text-decoration: underline;
+}
+
+.cardList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.snsLink {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.snsLink a {
+  fill: var(--text-color-2);
+}
